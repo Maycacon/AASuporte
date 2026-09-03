@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Support AI Extension",
+  "version": "1.0",
+  "description": "Copiloto para suporte.",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"], 
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ]
+}

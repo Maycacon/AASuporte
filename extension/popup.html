@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { width: 300px; font-family: sans-serif; padding: 10px; }
+    button { width: 100%; padding: 10px; margin-top: 10px; cursor: pointer; }
+    #result-box { display: none; margin-top: 15px; }
+    textarea { width: 100%; height: 150px; margin-top: 5px; resize: none; }
+  </style>
+</head>
+<body>
+  <h3>AASuporte
+  
+  </h3>
+  
+  <div id="status-container">
+    <p>Status: <strong>Pronto</strong></p>
+  </div>
+
+  <button id="btn-generate">Gerar acompanhamento</button>
+
+  <div id="result-box">
+    <hr>
+    <h4>Resultado:</h4>
+    <textarea id="result-text" readonly></textarea>
+    <button id="btn-copy">Copiar texto</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
