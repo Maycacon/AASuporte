@@ -11,6 +11,12 @@
     "scripting",
     "storage"
   ],
+  "host_permissions": [
+    "http://localhost:3000/*",
+    "https://*.vercel.app/*",
+    "https://*.supabase.co/*",
+    "https://*/*"
+  ],
   "background": {
     "service_worker": "service-worker.js"
   },

@@ -1,0 +1,12 @@
+{
+  "name": "aasuporte-deploy",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node api/generate.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "dotenv": "^17.4.2"
+  }
+}
