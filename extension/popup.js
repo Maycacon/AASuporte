@@ -1,4 +1,4 @@
-const DEFAULT_API_URL = 'https://SEU-PROJETO.vercel.app/api/generate';
+const DEFAULT_API_URL = 'https://backend-maycacos-projects.vercel.app/api/generate';
 const tagBox = document.getElementById('tag-box');
 const tagLabel = document.getElementById('tag-label');
 
@@ -142,7 +142,17 @@ document.getElementById('btn-generate').addEventListener('click', async () => {
         body: JSON.stringify({ chatHistory: chatText })
       });
 
-      const data = await response.json();
+      let data = {};
+      try {
+        data = await response.json();
+      } catch (parseError) {
+        data = {};
+      }
+
+      if (!response.ok) {
+        throw new Error(data?.error || `Erro HTTP ${response.status}`);
+      }
+
       const resultContent = data.result || 'Resumo não gerado.';
       const suggestedTag = data.tag || null;
 
