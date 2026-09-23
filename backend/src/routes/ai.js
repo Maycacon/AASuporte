@@ -16,7 +16,10 @@ router.post('/generate', async (req, res) => {
     const aiResponse = await geminiService.generateSummary(chatHistory);
 
     // Devolve o texto real para a extensão
-    res.json({ result: aiResponse });
+    res.json({
+      result: aiResponse.result,
+      tag: aiResponse.tag || null,
+    });
 
   } catch (error) {
     console.error('Erro na rota:', error);
